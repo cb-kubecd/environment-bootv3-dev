@@ -38,17 +38,8 @@ environments:
       enabled: false
       production: false
   key: staging
+  remote: true
   repository: environment-bootv3-staging
-- ingress:
-    domain: ""
-    externalDNS: false
-    namespaceSubDomain: ""
-    tls:
-      email: ""
-      enabled: false
-      production: false
-  key: production
-  repository: environment-bootv3-production
 gitops: true
 helmfile: true
 ingress:
