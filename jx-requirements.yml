@@ -38,7 +38,7 @@ environments:
       enabled: false
       production: false
   key: staging
-  remote: true
+  remoteCluster: true
   repository: environment-bootv3-staging
 gitops: true
 helmfile: true
