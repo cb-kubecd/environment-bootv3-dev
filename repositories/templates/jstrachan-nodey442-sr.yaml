@@ -2,10 +2,14 @@ apiVersion: jenkins.io/v1
 kind: SourceRepository
 metadata:
   creationTimestamp: null
+  annotations:
+    meta.helm.sh/release-name: repositories
+    meta.helm.sh/release-namespace: jx
   labels:
     owner: jstrachan
     provider: github
     repository: nodey442
+    app.kubernetes.io/managed-by: Helm
   name: jstrachan-nodey442
 spec:
   description: Imported application for jstrachan/nodey442
