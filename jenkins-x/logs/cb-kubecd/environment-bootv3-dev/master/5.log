@@ -1,0 +1,31 @@
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-rcgrj-5[0m stage [32mrelease[0m and container [32mstep-credential-initializer-lsjxm[0m
+{"level":"warn","ts":1587284913.2997525,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587284913.3010838,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-rcgrj-5[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-xgkxf[0m
+{"level":"warn","ts":1587284914.2668939,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1587284914.26835,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-rcgrj-5[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-rcgrj-5[0m stage [32mrelease[0m and container [32mstep-git-source-cb-kubecd-environment-bootv3-de-rcgrj-lfgx6[0m
+{"level":"warn","ts":1587284922.3973553,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587284923.42135,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-bootv3-dev.git @ v0.0.5 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-rcgrj-5[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:4c2005d10402200d484b4352ed2e39853d1561ac
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-rcgrj-5[0m stage [32mrelease[0m and container [32mstep-verify-secrets[0m
+created directory /secrets/**-boot
+loaded Secrets from: local in namespace ** with Secret **-boot-secrets
+exported Secrets to file: /secrets/**-boot/secrets.yaml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-rcgrj-5[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-rcgrj-5[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+error: **-requirements.yml file not found
+[31m
+Pipeline failed on stage 'release' : container 'step-verify-preinstall'. The execution of the pipeline has stopped.[0m
