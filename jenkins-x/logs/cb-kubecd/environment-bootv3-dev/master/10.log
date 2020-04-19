@@ -1,0 +1,397 @@
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-credential-initializer-7h42d[0m
+{"level":"warn","ts":1587288675.2013984,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587288675.2019727,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-vxvrf[0m
+{"level":"warn","ts":1587288675.6946747,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1587288675.6958199,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-git-source-cb-kubecd-environment-bootv3-de-25sgt-88dwg[0m
+{"level":"warn","ts":1587288683.8007228,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587288684.842171,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-bootv3-dev.git @ v0.0.10 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:be64ce1fd891e1fdee52fbd9e930d40ef65d5e83
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-verify-secrets[0m
+Installing plugin helm version 3.2.0-rc.1 for command ** helm from https://get.helm.sh/helm-v3.2.0-rc.1-linux-amd64.tar.gz
+created directory /secrets/**-boot
+loaded Secrets from: local in namespace ** with Secret **-boot-secrets
+exported Secrets to file: /secrets/**-boot/secrets.yaml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/**r-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Locking version stream https://github.com/jenkins-x/**r-versions.git to release v0.0.2. Jenkins X will use this release rather than master to resolve all versions from now on.
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- jstrachan
+- rawlingsj
+- daveconde
+reviewers:
+- jstrachan
+- rawlingsj
+- daveconde
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+Clearing the domain 35.240.127.185.nip.io as when using auto-DNS domains we need to regenerate to ensure its always accurate in case the cluster or ingress service is recreated
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+Validating Kaniko secret in namespace **
+
+verified there is a ConfigMap config in namespace **
+verified there is a ConfigMap plugins in namespace **
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-generate-helmfile[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-helmfile-system-diff[0m
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Comparing release=nginx-ingress, chart=stable/nginx-ingress
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-helmfile-system[0m
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Affected releases are:
+  nginx-ingress (stable/nginx-ingress) UPDATED
+
+Upgrading release=nginx-ingress, chart=stable/nginx-ingress
+Listing releases matching ^nginx-ingress$
+Release "nginx-ingress" has been upgraded. Happy Helming!
+NAME: nginx-ingress
+LAST DEPLOYED: Sun Apr 19 09:31:46 2020
+NAMESPACE: nginx
+STATUS: deployed
+REVISION: 28
+TEST SUITE: None
+NOTES:
+The nginx-ingress controller has been installed.
+It may take a few minutes for the LoadBalancer IP to be available.
+You can watch the status by running 'kubectl --namespace nginx get services -o wide -w nginx-ingress-controller'
+
+An example Ingress that makes use of the controller:
+
+  apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    name: example
+    namespace: foo
+  spec:
+    rules:
+      - host: www.example.com
+        http:
+          paths:
+            - backend:
+                serviceName: exampleService
+                servicePort: 80
+              path: /
+    # This section is only required if TLS is to be enabled for the Ingress
+    tls:
+        - hosts:
+            - www.example.com
+          secretName: example-tls
+
+If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: example-tls
+    namespace: foo
+  data:
+    tls.crt: <base64 encoded cert>
+    tls.key: <base64 encoded key>
+  type: kubernetes.io/tls
+
+nginx-ingress	nginx    	28      	2020-04-19 09:31:46.436921874 +0000 UTC	deployed	nginx-ingress-1.34.2	0.30.0     
+
+
+UPDATED RELEASES:
+NAME            CHART                  VERSION
+nginx-ingress   stable/nginx-ingress    1.34.2
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-verify-ingress[0m
+Waiting to find the external host name of the ingress controller Service in namespace nginx with name nginx-ingress-controller
+No domain flag provided so using default 35.240.127.185.nip.io to generate Ingress rules
+defaulting the domain to 35.240.127.185.nip.io and modified /workspace/source/**-requirements.yml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-helmfile-apps-diff[0m
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Building dependency release=repositories, chart=../repositories
+Comparing release=nexus, chart=jenkins-x/nexus
+Comparing release=tekton, chart=jenkins-x/tekton
+Comparing release=chartmuseum, chart=jenkins-x/chartmuseum
+Comparing release=**boot-helmfile-resources, chart=jenkins-x/**boot-helmfile-resources
+Comparing release=**ui, chart=jenkins-x/**ui
+Comparing release=lighthouse, chart=jenkins-x/lighthouse
+Comparing release=repositories, chart=../repositories
+[33m**, jstrachan-nodey442, SourceRepository (jenkins.io) has been added:[0m
+[31m- [0m
+[32m+ # Source: repositories/templates/jstrachan-nodey442-sr.yaml[0m
+[32m+ apiVersion: jenkins.io/v1[0m
+[32m+ kind: SourceRepository[0m
+[32m+ metadata:[0m
+[32m+   creationTimestamp: null[0m
+[32m+   annotations:[0m
+[32m+     meta.helm.sh/release-name: repositories[0m
+[32m+     meta.helm.sh/release-namespace: **[0m
+[32m+   labels:[0m
+[32m+     owner: jstrachan[0m
+[32m+     provider: github[0m
+[32m+     repository: nodey442[0m
+[32m+     app.kubernetes.io/managed-by: Helm[0m
+[32m+   name: jstrachan-nodey442[0m
+[32m+ spec:[0m
+[32m+   description: Imported application for jstrachan/nodey442[0m
+[32m+   httpCloneURL: https://github.com/jstrachan/nodey442.git[0m
+[32m+   org: jstrachan[0m
+[32m+   provider: https://github.com[0m
+[32m+   providerKind: github[0m
+[32m+   providerName: github[0m
+[32m+   repo: nodey442[0m
+[32m+   scheduler:[0m
+[32m+     kind: ""[0m
+[32m+     name: ""[0m
+[32m+   url: https://github.com/jstrachan/nodey442.git[0m
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-helmfile-apps[0m
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Building dependency release=repositories, chart=../repositories
+Affected releases are:
+  chartmuseum (jenkins-x/chartmuseum) UPDATED
+  **boot-helmfile-resources (jenkins-x/**boot-helmfile-resources) UPDATED
+  **ui (jenkins-x/**ui) UPDATED
+  lighthouse (jenkins-x/lighthouse) UPDATED
+  nexus (jenkins-x/nexus) UPDATED
+  repositories (../repositories) UPDATED
+  tekton (jenkins-x/tekton) UPDATED
+
+Upgrading release=**boot-helmfile-resources, chart=jenkins-x/**boot-helmfile-resources
+Upgrading release=nexus, chart=jenkins-x/nexus
+Upgrading release=lighthouse, chart=jenkins-x/lighthouse
+Upgrading release=chartmuseum, chart=jenkins-x/chartmuseum
+Upgrading release=**ui, chart=jenkins-x/**ui
+Upgrading release=repositories, chart=../repositories
+Upgrading release=tekton, chart=jenkins-x/tekton
+Release "repositories" has been upgraded. Happy Helming!
+NAME: repositories
+LAST DEPLOYED: Sun Apr 19 09:32:10 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 9
+TEST SUITE: None
+
+Listing releases matching ^repositories$
+repositories	**       	9       	2020-04-19 09:32:10.120156496 +0000 UTC	deployed	repositories-1	           
+
+Release "nexus" has been upgraded. Happy Helming!
+NAME: nexus
+LAST DEPLOYED: Sun Apr 19 09:32:14 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 27
+TEST SUITE: None
+NOTES:
+It may take a few minutes for Nexus to become ready
+
+Listing releases matching ^nexus$
+nexus	**       	27      	2020-04-19 09:32:14.701918243 +0000 UTC	deployed	nexus-0.1.21	           
+
+Release "lighthouse" has been upgraded. Happy Helming!
+NAME: lighthouse
+LAST DEPLOYED: Sun Apr 19 09:32:15 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 27
+TEST SUITE: None
+NOTES:
+Get the application URL by running these commands:
+
+kubectl get ingress lighthouse-lighthouse
+
+Listing releases matching ^lighthouse$
+Release "chartmuseum" has been upgraded. Happy Helming!
+NAME: chartmuseum
+LAST DEPLOYED: Sun Apr 19 09:32:16 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 27
+TEST SUITE: None
+NOTES:
+** Please be patient while the chart is being deployed **
+
+Get the ChartMuseum URL by running:
+
+  export POD_NAME=$(kubectl get pods --namespace ** -l "app=chartmuseum" -l "release=chartmuseum" -o jsonpath="{.items[0].metadata.name}")
+  echo http://127.0.0.1:8080/
+  kubectl port-forward $POD_NAME 8080:8080 --namespace **
+
+Listing releases matching ^chartmuseum$
+lighthouse	**       	27      	2020-04-19 09:32:15.705608757 +0000 UTC	deployed	lighthouse-0.0.493	0.0.493    
+
+chartmuseum	**       	27      	2020-04-19 09:32:16.531296056 +0000 UTC	deployed	chartmuseum-1.1.7	0.7.1      
+
+Release "**ui" has been upgraded. Happy Helming!
+NAME: **ui
+LAST DEPLOYED: Sun Apr 19 09:32:16 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 27
+TEST SUITE: None
+NOTES:
+1. Get the application URL by running these commands:
+  export POD_NAME=$(kubectl get pods --namespace ** -l "app=**ui,release=**ui" -o jsonpath="{.items[0].metadata.name}")
+  echo "Visit http://127.0.0.1:8080 to use your application"
+  kubectl port-forward $POD_NAME 8080:80
+
+Listing releases matching ^**ui$
+Release "tekton" has been upgraded. Happy Helming!
+NAME: tekton
+LAST DEPLOYED: Sun Apr 19 09:32:16 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 27
+TEST SUITE: None
+NOTES:
+Tekton Pipelines
+
+Listing releases matching ^tekton$
+**ui	**       	27      	2020-04-19 09:32:16.998224865 +0000 UTC	deployed	**ui-0.0.1217	0.0.1217   
+
+tekton	**       	27      	2020-04-19 09:32:16.768856403 +0000 UTC	deployed	tekton-0.0.51	           
+
+Release "**boot-helmfile-resources" has been upgraded. Happy Helming!
+NAME: **boot-helmfile-resources
+Listing releases matching ^**boot-helmfile-resources$
+LAST DEPLOYED: Sun Apr 19 09:32:17 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 27
+TEST SUITE: None
+
+**boot-helmfile-resources	**       	27      	2020-04-19 09:32:17.16106174 +0000 UTC	deployed	**boot-helmfile-resources-0.0.132	           
+
+
+UPDATED RELEASES:
+NAME                        CHART                                  VERSION
+repositories                ../repositories                              1
+nexus                       jenkins-x/nexus                         0.1.21
+lighthouse                  jenkins-x/lighthouse                   0.0.493
+chartmuseum                 jenkins-x/chartmuseum                    1.1.7
+**ui                        jenkins-x/**ui                        0.0.1217
+tekton                      jenkins-x/tekton                        0.0.51
+**boot-helmfile-resources   jenkins-x/**boot-helmfile-resources    0.0.132
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-git-creds[0m
+Generated Git credentials file /builder/home/git/credentials
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Validating git repository for dev environment at URL https://github.com/cb-kubecd/environment-bootv3-dev.git
+Validating git repository for staging environment at URL https://github.com/cb-kubecd/environment-bootv3-staging.git
+Using Git provider github at https://github.com
+? Using Git user name: ******************
+? Using organisation: cb-kubecd
+Creating repository cb-kubecd/environment-bootv3-staging
+Git repository cb-kubecd/environment-bootv3-staging already exists
+git repository https://github.com/cb-kubecd/environment-bootv3-staging is remote so not modifying it
+Environment git repositories look good
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: Finding service url for hook in namespace **
+DEBUG: Couldn't find service url, attempting to look up via ingress
+DEBUG: found service url http://hook-**.35.240.127.185.nip.io
+Updating webhooks for Owner: cb-kubecd and Repository: environment-bootv3-dev in git server: https://github.com
+Checking hooks for repository cb-kubecd/environment-bootv3-dev with user ******************
+Found matching hook for url http://hook-**.35.240.127.185.nip.io/hook
+Updating GitHub webhook for cb-kubecd/environment-bootv3-dev for url http://hook-**.35.240.127.185.nip.io/hook
+Updating webhooks for Owner: cb-kubecd and Repository: environment-bootv3-staging in git server: https://github.com
+Checking hooks for repository cb-kubecd/environment-bootv3-staging with user ******************
+Found matching hook for url http://hook-**.35.240.127.185.nip.io/hook
+Updating GitHub webhook for cb-kubecd/environment-bootv3-staging for url http://hook-**.35.240.127.185.nip.io/hook
+Updating webhooks for Owner: jstrachan and Repository: nodey442 in git server: https://github.com
+Checking hooks for repository jstrachan/nodey442 with user ******************
+WARNING: Querying webhooks on jstrachan/nodey442: GET https://api.github.com/repos/jstrachan/nodey442/hooks: 404 Not Found []
+Creating GitHub webhook for jstrachan/nodey442 for url http://hook-**.35.240.127.185.nip.io/hook
+WARNING: failed to update webhooks for Owner: jstrachan and Repository: nodey442 in git server: https://github.com: creating the webhook "http://hook-**.35.240.127.185.nip.io/hook" on repository 'jstrachan/nodey442': unable to create webhook for jstrachan/nodey442 - permission denied: POST https://api.github.com/repos/jstrachan/nodey442/hooks: 404 Not Found []
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-25sgt-10[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                                        STATUS
+jenkins-x-chartmuseum-7844b7b6cb-z864n                     Running
+**boot-helmfile-resources-controllerbuild-7fd45857c5-r7zh8 Running
+**boot-helmfile-resources-controllerrole-7cbc5bcc6-8vb9l   Running
+**boot-helmfile-resources-gcactivities-1587286800-n2nm6    Succeeded
+**boot-helmfile-resources-gcactivities-1587288600-qg4kr    Succeeded
+**boot-helmfile-resources-gcpods-1587286800-brfhx          Succeeded
+**boot-helmfile-resources-gcpods-1587288600-kjcjg          Succeeded
+**boot-helmfile-resources-gcpreviews-1587286800-58866      Succeeded
+**ui-**ui-d49644f7f-lvczk                                  Running
+lighthouse-lighthouse-95fffcb56-2c54n                      Running
+lighthouse-lighthouse-95fffcb56-gb4mk                      Running
+nexus-nexus-5f77cf7b86-tmmb2                               Running
+tekton-pipelines-controller-666488cbd5-6lcm7               Running
+tide-5f89c84c58-jts7m                                      Running
+Verifying the git config
+Verifying username ****************** at git server github at https://github.com
+Found 5 organisations in git server https://github.com: cb-kubecd, cloudbees, jenkins-x, jenkins-x-labs, jenkins-x-labs-bdd-tests
+Validated pipeline user ****************** on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
