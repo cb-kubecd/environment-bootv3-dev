@@ -1,0 +1,79 @@
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-9fhph-9[0m stage [32mrelease[0m and container [32mstep-credential-initializer-tvf5g[0m
+{"level":"warn","ts":1587288486.3741946,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587288486.3747182,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-9fhph-9[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-65s5p[0m
+{"level":"warn","ts":1587288487.3135047,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1587288487.3146641,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-9fhph-9[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-9fhph-9[0m stage [32mrelease[0m and container [32mstep-git-source-cb-kubecd-environment-bootv3-de-9fhph-thnpq[0m
+{"level":"warn","ts":1587288495.3973837,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587288496.5549614,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-bootv3-dev.git @ v0.0.9 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-9fhph-9[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:bd3a1bb8b79fbe1d217ea22117b43b2ff5f2564f
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-9fhph-9[0m stage [32mrelease[0m and container [32mstep-verify-secrets[0m
+created directory /secrets/**-boot
+loaded Secrets from: local in namespace ** with Secret **-boot-secrets
+exported Secrets to file: /secrets/**-boot/secrets.yaml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-9fhph-9[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-9fhph-9[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/**r-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Locking version stream https://github.com/jenkins-x/**r-versions.git to release v0.0.2. Jenkins X will use this release rather than master to resolve all versions from now on.
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- jstrachan
+- rawlingsj
+- daveconde
+reviewers:
+- jstrachan
+- rawlingsj
+- daveconde
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+Clearing the domain 35.240.127.185.nip.io as when using auto-DNS domains we need to regenerate to ensure its always accurate in case the cluster or ingress service is recreated
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+Validating Kaniko secret in namespace **
+
+verified there is a ConfigMap config in namespace **
+verified there is a ConfigMap plugins in namespace **
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-9fhph-9[0m stage [32mrelease[0m and container [32mstep-generate-helmfile[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-9fhph-9[0m stage [32mrelease[0m and container [32mstep-helmfile-system-diff[0m
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Comparing release=nginx-ingress, chart=stable/nginx-ingress
+in ./helmfile.yaml: helm exited with status 1:
+  Error: helm diff upgrade requires at least helm version 3.1.0-rc.1
+  Error: plugin "diff" exited with error
+[31m
+Pipeline failed on stage 'release' : container 'step-helmfile-system-diff'. The execution of the pipeline has stopped.[0m
