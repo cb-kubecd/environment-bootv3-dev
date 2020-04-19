@@ -2,6 +2,7 @@ autoUpdate:
   enabled: false
   schedule: ""
 bootConfigURL: https://github.com/jenkins-x/jxr-boot-config
+buildPackUrl: https://github.com/jenkins-x/jxr-packs-kubernetes.git
 cluster:
   clusterName: bootv3
   devEnvApprovers:
