@@ -21,7 +21,7 @@ cluster:
   zone: europe-west1-d
 environments:
 - ingress:
-    domain: 35.240.127.185.nip.io
+    domain: ""
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
