@@ -1,7 +1,7 @@
 autoUpdate:
   enabled: false
   schedule: ""
-bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-helmfile-config
+bootConfigURL: https://github.com/jenkins-x/jxr-boot-config
 cluster:
   clusterName: bootv3
   devEnvApprovers:
@@ -71,6 +71,6 @@ velero:
   schedule: ""
   ttl: ""
 versionStream:
-  ref: v2.0.124
-  url: https://github.com/jenkins-x-labs/jenkins-x-versions.git
+  ref: master
+  url: https://github.com/jenkins-x/jxr-versions.git
 webhook: lighthouse
