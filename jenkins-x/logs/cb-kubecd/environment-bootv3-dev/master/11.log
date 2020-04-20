@@ -1,0 +1,500 @@
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-credential-initializer-4s5rh[0m
+{"level":"warn","ts":1587368418.6776679,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587368418.6782587,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-5mg78[0m
+{"level":"warn","ts":1587368419.5858681,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1587368419.587013,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-git-source-cb-kubecd-environment-bootv3-de-b79x4-mnsw8[0m
+{"level":"warn","ts":1587368427.7233438,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587368428.7939527,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-bootv3-dev.git @ v0.0.11 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:e0abb3ee77438bc653730369b122ca1042d8c48e
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-verify-secrets[0m
+Installing plugin helm version 3.2.0-rc.1 for command ** helm from https://get.helm.sh/helm-v3.2.0-rc.1-linux-amd64.tar.gz
+created directory /secrets/**-boot
+loaded Secrets from: local in namespace ** with Secret **-boot-secrets
+exported Secrets to file: /secrets/**-boot/secrets.yaml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/**r-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+Locking version stream https://github.com/jenkins-x/**r-versions.git to release v0.0.2. Jenkins X will use this release rather than master to resolve all versions from now on.
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- jstrachan
+- rawlingsj
+- daveconde
+reviewers:
+- jstrachan
+- rawlingsj
+- daveconde
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+Clearing the domain 35.240.127.185.nip.io as when using auto-DNS domains we need to regenerate to ensure its always accurate in case the cluster or ingress service is recreated
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+Validating Kaniko secret in namespace **
+
+verified there is a ConfigMap config in namespace **
+verified there is a ConfigMap plugins in namespace **
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-generate-helmfile[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-helmfile-system-diff[0m
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Comparing release=nginx-ingress, chart=stable/nginx-ingress
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-helmfile-system[0m
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Affected releases are:
+  nginx-ingress (stable/nginx-ingress) UPDATED
+
+Upgrading release=nginx-ingress, chart=stable/nginx-ingress
+Release "nginx-ingress" has been upgraded. Happy Helming!
+NAME: nginx-ingress
+LAST DEPLOYED: Mon Apr 20 07:40:52 2020
+NAMESPACE: nginx
+STATUS: deployed
+REVISION: 29
+TEST SUITE: None
+NOTES:
+The nginx-ingress controller has been installed.
+It may take a few minutes for the LoadBalancer IP to be available.
+You can watch the status by running 'kubectl --namespace nginx get services -o wide -w nginx-ingress-controller'
+
+An example Ingress that makes use of the controller:
+
+  apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    name: example
+    namespace: foo
+  spec:
+    rules:
+      - host: www.example.com
+        http:
+          paths:
+            - backend:
+                serviceName: exampleService
+                servicePort: 80
+              path: /
+    # This section is only required if TLS is to be enabled for the Ingress
+    tls:
+        - hosts:
+            - www.example.com
+          secretName: example-tls
+
+If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: example-tls
+    namespace: foo
+  data:
+    tls.crt: <base64 encoded cert>
+    tls.key: <base64 encoded key>
+  type: kubernetes.io/tls
+
+Listing releases matching ^nginx-ingress$
+nginx-ingress	nginx    	29      	2020-04-20 07:40:52.432375346 +0000 UTC	deployed	nginx-ingress-1.34.2	0.30.0     
+
+
+UPDATED RELEASES:
+NAME            CHART                  VERSION
+nginx-ingress   stable/nginx-ingress    1.34.2
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-verify-ingress[0m
+Waiting to find the external host name of the ingress controller Service in namespace nginx with name nginx-ingress-controller
+No domain flag provided so using default 35.240.127.185.nip.io to generate Ingress rules
+defaulting the domain to 35.240.127.185.nip.io and modified /workspace/source/**-requirements.yml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-helmfile-apps-diff[0m
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Building dependency release=repositories, chart=../repositories
+Comparing release=lighthouse, chart=jenkins-x/lighthouse
+Comparing release=chartmuseum, chart=jenkins-x/chartmuseum
+Comparing release=repositories, chart=../repositories
+Comparing release=**boot-helmfile-resources, chart=jenkins-x/**boot-helmfile-resources
+Comparing release=**ui, chart=jenkins-x/**ui
+Comparing release=tekton, chart=jenkins-x/tekton
+Comparing release=nexus, chart=jenkins-x/nexus
+[33m**, **ui-**ui, Deployment (extensions) has changed:[0m
+  # Source: **ui/templates/deployment.yaml
+  apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    name: **ui-**ui
+    labels:
+      app: **ui
+[31m-     chart: **ui-0.0.1217[0m
+[32m+     chart: **ui-0.0.1218[0m
+      release: **ui
+      heritage: Helm
+  spec:
+    replicas: 1
+    strategy:
+      rollingUpdate:
+        maxUnavailable: 35%
+    template:
+      metadata:
+        labels:
+          app: **ui
+          release: **ui
+      spec:
+        containers:
+          - name: **ui-frontend
+            env:
+            - name: API_PORT
+              value: "8080"
+            - name: BASE_PATH
+              value: ""
+[31m-           image: "gcr.io/jenkinsxio/**ui-frontend:0.0.1217"[0m
+[32m+           image: "gcr.io/jenkinsxio/**ui-frontend:0.0.1218"[0m
+            imagePullPolicy: IfNotPresent
+            ports:
+              - containerPort: 80
+            livenessProbe:
+              httpGet:
+                path: "/"
+                port: 80
+              periodSeconds: 60
+              timeoutSeconds: 5
+            readinessProbe:
+              httpGet:
+                path: "/"
+                port: 80
+              periodSeconds: 60
+              timeoutSeconds: 5
+            resources:
+              limits:
+                cpu: 200m
+                memory: 512Mi
+              requests:
+                cpu: 100m
+                memory: 256Mi
+          - name: **ui-backend
+            image: "gcr.io/jenkinsxio/**ui-backend:0.0.421"
+            imagePullPolicy: IfNotPresent
+            env:
+            - name: XDG_CONFIG_HOME
+              value: /home
+            - name: DISABLE_SSO
+              value: "true"
+            - name: JX_LOG_FORMAT
+              value: json
+            - name: PIPELINE_KIND
+              value: dummy
+            ports:
+              - containerPort: 8080
+            livenessProbe:
+              httpGet:
+                path: /_health
+                port: 8080
+              periodSeconds: 60
+              timeoutSeconds: 5
+            readinessProbe:
+              httpGet:
+                path: /_health
+                port: 8080
+              periodSeconds: 60
+              timeoutSeconds: 5
+            resources:
+              limits:
+                cpu: 200m
+                memory: 512Mi
+              requests:
+                cpu: 100m
+                memory: 256Mi
+        serviceAccountName: **ui
+[33m**, **ui-**ui, ClusterRoleBinding (rbac.authorization.k8s.io) has changed:[0m
+  # Source: **ui/templates/rolebinding.yaml
+  kind: ClusterRoleBinding
+  apiVersion: rbac.authorization.k8s.io/v1
+  metadata:
+    name: **ui-**ui
+    labels:
+      app: **ui
+[31m-     chart: **ui-0.0.1217[0m
+[32m+     chart: **ui-0.0.1218[0m
+      release: **ui
+      heritage: Helm
+  subjects:
+  - kind: ServiceAccount
+    name: **ui
+    namespace: **
+  roleRef:
+    kind: ClusterRole
+    apiGroup: rbac.authorization.k8s.io
+    name: cluster-*****
+[33m**, **ui-**ui-metrics, Service (v1) has changed:[0m
+  # Source: **ui/templates/metrics-service.yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: **ui-**ui-metrics
+    labels:
+      app: **ui
+[31m-     chart: **ui-0.0.1217[0m
+[32m+     chart: **ui-0.0.1218[0m
+      release: **ui
+      heritage: Helm
+    annotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "8080"
+  spec:
+    type: ClusterIP
+    ports:
+      - port: 8080
+        targetPort: 8080
+        protocol: TCP
+        name: **ui-frontend
+    selector:
+      app: **ui
+      release: **ui
+[33m**, **ui, Service (v1) has changed:[0m
+  # Source: **ui/templates/service.yaml
+  apiVersion: v1
+  kind: Service
+  metadata:
+    name: **ui
+    labels:
+      app: **ui
+[31m-     chart: **ui-0.0.1217[0m
+[32m+     chart: **ui-0.0.1218[0m
+      release: **ui
+      heritage: Helm
+      jenkins.io/ui-resource: "true"
+  spec:
+    type: ClusterIP
+    ports:
+      - port: 80
+        targetPort: 80
+        protocol: TCP
+        name: **ui-frontend
+    selector:
+      app: **ui
+      release: **ui
+[33m**, single-user, EnvironmentRoleBinding (jenkins.io) has changed:[0m
+  # Source: **ui/templates/single-user-environmentrolebinding.yaml
+  apiVersion: jenkins.io/v1
+  kind: EnvironmentRoleBinding
+  metadata:
+      labels:
+          app: **ui
+[31m-         chart: "**ui-0.0.1217"[0m
+[32m+         chart: "**ui-0.0.1218"[0m
+          release: "**ui"
+          heritage: "Helm"
+      name: single-user
+      namespace: **
+  spec:
+    roleRef:
+      apiGroup: rbac.authorization.k8s.io
+      kind: Role
+      name: viewer
+    subjects:
+      - kind: ServiceAccount
+        name: single-user
+        namespace: **
+[33m**, **ui, ServiceAccount (v1) has changed:[0m
+  # Source: **ui/templates/serviceaccount.yaml
+  apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+    labels:
+      app: **ui
+[31m-     chart: "**ui-0.0.1217"[0m
+[32m+     chart: "**ui-0.0.1218"[0m
+      release: "**ui"
+      heritage: "Helm"
+    name: **ui
+[33m**, single-user, ServiceAccount (v1) has changed:[0m
+  # Source: **ui/templates/single-user-serviceaccount.yaml
+  apiVersion: v1
+  kind: ServiceAccount
+  metadata:
+      labels:
+          app: **ui
+[31m-         chart: "**ui-0.0.1217"[0m
+[32m+         chart: "**ui-0.0.1218"[0m
+          release: "**ui"
+          heritage: "Helm"
+      name: single-user
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-de-b79x4-11[0m stage [32mrelease[0m and container [32mstep-helmfile-apps[0m
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Building dependency release=repositories, chart=../repositories
+Affected releases are:
+  chartmuseum (jenkins-x/chartmuseum) UPDATED
+  **boot-helmfile-resources (jenkins-x/**boot-helmfile-resources) UPDATED
+  **ui (jenkins-x/**ui) UPDATED
+  lighthouse (jenkins-x/lighthouse) UPDATED
+  nexus (jenkins-x/nexus) UPDATED
+  repositories (../repositories) UPDATED
+  tekton (jenkins-x/tekton) UPDATED
+
+Upgrading release=**boot-helmfile-resources, chart=jenkins-x/**boot-helmfile-resources
+Upgrading release=nexus, chart=jenkins-x/nexus
+Upgrading release=lighthouse, chart=jenkins-x/lighthouse
+Upgrading release=tekton, chart=jenkins-x/tekton
+Upgrading release=chartmuseum, chart=jenkins-x/chartmuseum
+Upgrading release=**ui, chart=jenkins-x/**ui
+Upgrading release=repositories, chart=../repositories
+Release "repositories" has been upgraded. Happy Helming!
+NAME: repositories
+LAST DEPLOYED: Mon Apr 20 07:41:15 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 10
+TEST SUITE: None
+Listing releases matching ^repositories$
+
+repositories	**       	10      	2020-04-20 07:41:15.89629153 +0000 UTC	deployed	repositories-1	           
+
+Release "chartmuseum" has been upgraded. Happy Helming!
+NAME: chartmuseum
+LAST DEPLOYED: Mon Apr 20 07:41:21 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 28
+TEST SUITE: None
+NOTES:
+** Please be patient while the chart is being deployed **
+
+Get the ChartMuseum URL by running:
+
+  export POD_NAME=$(kubectl get pods --namespace ** -l "app=chartmuseum" -l "release=chartmuseum" -o jsonpath="{.items[0].metadata.name}")
+  echo http://127.0.0.1:8080/
+  kubectl port-forward $POD_NAME 8080:8080 --namespace **
+
+Listing releases matching ^chartmuseum$
+Release "nexus" has been upgraded. Happy Helming!
+NAME: nexus
+LAST DEPLOYED: Mon Apr 20 07:41:21 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 28
+TEST SUITE: None
+NOTES:
+It may take a few minutes for Nexus to become ready
+
+Listing releases matching ^nexus$
+chartmuseum	**       	28      	2020-04-20 07:41:21.776186174 +0000 UTC	deployed	chartmuseum-1.1.7	0.7.1      
+
+nexus	**       	28      	2020-04-20 07:41:21.952167817 +0000 UTC	deployed	nexus-0.1.21	           
+
+Listing releases matching ^lighthouse$
+Release "lighthouse" has been upgraded. Happy Helming!
+NAME: lighthouse
+LAST DEPLOYED: Mon Apr 20 07:41:21 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 28
+TEST SUITE: None
+NOTES:
+Get the application URL by running these commands:
+
+kubectl get ingress lighthouse-lighthouse
+
+Listing releases matching ^tekton$
+Release "tekton" has been upgraded. Happy Helming!
+NAME: tekton
+LAST DEPLOYED: Mon Apr 20 07:41:22 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 28
+TEST SUITE: None
+NOTES:
+Tekton Pipelines
+
+lighthouse	**       	28      	2020-04-20 07:41:21.515728463 +0000 UTC	deployed	lighthouse-0.0.493	0.0.493    
+
+tekton	**       	28      	2020-04-20 07:41:22.022741073 +0000 UTC	deployed	tekton-0.0.51	           
+
+Release "**boot-helmfile-resources" has been upgraded. Happy Helming!
+NAME: **boot-helmfile-resources
+LAST DEPLOYED: Mon Apr 20 07:41:22 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 28
+TEST SUITE: None
+
+Listing releases matching ^**boot-helmfile-resources$
+**boot-helmfile-resources	**       	28      	2020-04-20 07:41:22.719239544 +0000 UTC	deployed	**boot-helmfile-resources-0.0.132	           
+
+
+UPDATED RELEASES:
+NAME                        CHART                                 VERSION
+repositories                ../repositories                             1
+chartmuseum                 jenkins-x/chartmuseum                   1.1.7
+nexus                       jenkins-x/nexus                        0.1.21
+lighthouse                  jenkins-x/lighthouse                  0.0.493
+tekton                      jenkins-x/tekton                       0.0.51
+**boot-helmfile-resources   jenkins-x/**boot-helmfile-resources   0.0.132
+
+
+FAILED RELEASES:
+NAME
+**ui
+in ./helmfile.yaml: failed processing release **ui: helm exited with status 1:
+  Error: UPGRADE FAILED: release **ui failed, and has been rolled back due to atomic being set: timed out waiting for the condition
+[31m
+Pipeline failed on stage 'release' : container 'step-helmfile-apps'. The execution of the pipeline has stopped.[0m
